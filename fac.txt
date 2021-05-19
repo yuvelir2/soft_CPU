@@ -1,0 +1,28 @@
+JMP main
+PUSH 6
+ 
+:fac 
+PUSH bx 
+PUSH ax 
+MUL 
+POP bx 
+PUSH ax 
+PUSH 1 
+SUB 
+POP ax 
+PUSH ax 
+PUSH 1 
+JB fac
+RET
+
+:main 
+IN 
+POP ax 
+PUSH 1 
+POP bx 
+CALL fac 
+PUSH bx 
+OUT 
+END
+
+
